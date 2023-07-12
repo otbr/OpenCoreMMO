@@ -8,17 +8,45 @@ namespace NeoServer.Web.API.Controllers;
 [Route("api/[controller]")]
 public class AccountController : BaseController
 {
+    #region private members
+
     private readonly IAccountApiService _accountApiService;
+
+    #endregion
+
+    #region constructor
 
     public AccountController(IAccountApiService accountApiService)
     {
         _accountApiService = accountApiService;
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Post(AccountPostRequest request)
+    #endregion
+
+    #region public methods
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllAsync()
     {
-        await _accountApiService.Create(request);
+        return Response(await _accountApiService.GetAll());
+    }
+
+    [HttpGet("{accountId}")]
+    public async Task<IActionResult> GetById([FromRoute] int accountId)
+    {
+        return Response(await _accountApiService.GetById(accountId));
+    }
+
+    [HttpPost()]
+    public async Task<IActionResult> Create(AccountRequestViewModel request)
+    {
+        var result = await _accountApiService.Create(request);
+
+        if (result != null)
+            return Response(result);
+
         return Ok();
     }
+
+    #endregion
 }

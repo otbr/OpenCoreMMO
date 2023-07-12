@@ -9,9 +9,9 @@ public static class AutoMapperInjection
         var scanAssemblies = AssemblyHelper.GetAllAssemblies();
 
         var profiles = scanAssemblies
+            .Where(c => c.FullName?.EndsWith("Profile") ?? false)
             .SelectMany(o => o.DefinedTypes
                 .Where(x => x.IsClass)
-                .Where(c => c.FullName?.EndsWith("Profile") ?? false)
             );
 
         foreach (var profile in profiles)

@@ -1,7 +1,7 @@
 ﻿namespace NeoServer.Web.Shared.ViewModels.Response;
 
 [Serializable]
-public class PlayerResponseViewModel
+public class PlayerResponseViewModel : IViewModel
 {
     public int PlayerId { get; set; }
     public string Name { get; set; }

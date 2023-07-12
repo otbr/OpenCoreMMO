@@ -1,8 +1,8 @@
 namespace NeoServer.Web.Shared.ViewModels.Request;
 
-public class AccountPostRequest
+public class AccountRequestViewModel : IViewModel
 {
     public string Password { get; set; }
-    public string Email { get; set; }
+    public string EmailAddress { get; set; }
     public int PremiumDays { get; set; }
 }

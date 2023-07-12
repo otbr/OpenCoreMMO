@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NeoServer.Data.Contexts;
@@ -28,7 +31,6 @@ public class BaseRepository<TEntity> : IBaseRepositoryNeo<TEntity>
     #endregion
 
     public NeoContext NewDbContext => new(_contextOptions, _logger);
-
 
     #region private methods implementation
 
@@ -97,6 +99,31 @@ public class BaseRepository<TEntity> : IBaseRepositoryNeo<TEntity>
         await using var context = NewDbContext;
         var entity = context.Set<TEntity>();
         return await entity.FindAsync(id);
+    }
+
+    /// <summary>
+    ///     This method is responsible for find entity by predicate from entity table.
+    /// </summary>
+    public async Task<TEntity> FindByAsync(Expression<Func<TEntity, bool>> predicate)
+    {
+        await using var context = NewDbContext;
+        return await context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(predicate);
+    }
+
+    /// <summary>
+    ///     This method is responsible for find entity by predicate and include properties from entity table.
+    /// </summary>
+    public async Task<TEntity> FindByAsync(
+        Expression<Func<TEntity, bool>> predicate,
+        params Expression<Func<TEntity, object>>[] includeProperties)
+    {
+        await using var context = NewDbContext;
+        var queryable = context.Set<TEntity>().AsNoTracking().Where(predicate).AsQueryable();
+
+        foreach (Expression<Func<TEntity, object>> includeProperty in includeProperties)
+            queryable = queryable.Include(includeProperty);
+
+        return queryable.FirstOrDefault();
     }
 
     #endregion

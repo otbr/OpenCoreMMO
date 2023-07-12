@@ -2,6 +2,8 @@
 using NeoServer.Data.Contexts;
 using NeoServer.Data.Entities;
 using NeoServer.WebApi.Tests.Factories;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace NeoServer.WebApi.Tests.Tests;
 
@@ -34,8 +36,10 @@ public class BaseIntegrationTests
     #endregion
 
     #region Protected Methods
+    protected StringContent EncodeEntityData(object data)
+            => new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-    private static string GenerateRandomString(int length, bool onlyNumbers = false, bool onlyLetters = false)
+    protected static string GenerateRandomString(int length, bool onlyNumbers = false, bool onlyLetters = false)
     {
         var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -93,7 +97,9 @@ public class BaseIntegrationTests
         return world;
     }
 
-    protected async Task<PlayerEntity> CreatePlayer()
+    protected async Task<PlayerEntity> CreatePlayer(
+        string name = "",
+        ushort? level = null)
     {
         var lastAccount = NeoContext.Accounts.OrderBy(c => c.Id).LastOrDefault();
 
@@ -115,8 +121,8 @@ public class BaseIntegrationTests
             AccountId = lastAccount.Id,
             WorldId = lastWorld.Id,
             Id = ++lastId,
-            Name = GenerateRandomString(10),
-            Level = 1
+            Name = string.IsNullOrEmpty(name) ? GenerateRandomString(10) : name,
+            Level = level == null ? (ushort)1 : level.Value
         };
 
         await NeoContext.Players.AddAsync(player);

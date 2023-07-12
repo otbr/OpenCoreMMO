@@ -28,19 +28,26 @@ public class PlayerEntityConfiguration : IEntityTypeConfiguration<PlayerEntity>
         entity.Property(e => e.PlayerType);
 
         ConfigureProperty(entity, e => e.AccountId, "int(11)", "0");
+        ConfigureProperty(entity, e => e.WorldId, "int(11)", "1");
         ConfigureProperty(entity, e => e.TownId, "int(11)", "1");
-        ConfigureProperty(entity, e => e.Capacity, "int(11)", "0");
-        ConfigureProperty(entity, e => e.Health, "int(11)", "150");
-        ConfigureProperty(entity, e => e.MaxHealth, "int(11)", "150");
-        ConfigureProperty(entity, e => e.Level, "int(11)", "1");
+        ConfigureProperty(entity, e => e.PlayerType, "int(11)", "1");
+        ConfigureProperty(entity, e => e.Capacity, "int(11)", "470");
+        ConfigureProperty(entity, e => e.Experience, "int(11)", "4200");
+        ConfigureProperty(entity, e => e.Health, "int(11)", "185");
+        ConfigureProperty(entity, e => e.MaxHealth, "int(11)", "185");
+        ConfigureProperty(entity, e => e.Level, "int(11)", "8");
         ConfigureProperty(entity, e => e.LookAddons, "int(11)", "0");
-        ConfigureProperty(entity, e => e.LookBody, "int(11)", "0");
-        ConfigureProperty(entity, e => e.LookFeet, "int(11)", "0");
-        ConfigureProperty(entity, e => e.LookHead, "int(11)", "0");
-        ConfigureProperty(entity, e => e.LookLegs, "int(11)", "0");
-        ConfigureProperty(entity, e => e.LookType, "int(11)", "136");
-        ConfigureProperty(entity, e => e.Mana, "int(11)", "0");
-        ConfigureProperty(entity, e => e.MaxMana, "int(11)", "0");
+        ConfigureProperty(entity, e => e.LookBody, "int(11)", "69");
+        ConfigureProperty(entity, e => e.LookFeet, "int(11)", "95");
+        ConfigureProperty(entity, e => e.LookHead, "int(11)", "78");
+        ConfigureProperty(entity, e => e.LookLegs, "int(11)", "58");
+        ConfigureProperty(entity, e => e.LookType, "int(11)", "130");
+        ConfigureProperty(entity, e => e.MagicLevel, "int(11)", "1");
+        ConfigureProperty(entity, e => e.Mana, "int(11)", "90");
+        ConfigureProperty(entity, e => e.MaxMana, "int(11)", "90");
+        ConfigureProperty(entity, e => e.Soul, "int(11)", "100");
+        ConfigureProperty(entity, e => e.MaxSoul, "int(11)", "100");
+        ConfigureProperty(entity, e => e.Speed, "int(11)", "234");
         ConfigureProperty(entity, e => e.Name, "varchar(255)");
         ConfigureProperty(entity, e => e.PosX, "int(11)", "0");
         ConfigureProperty(entity, e => e.PosY, "int(11)", "0");
@@ -63,6 +70,8 @@ public class PlayerEntityConfiguration : IEntityTypeConfiguration<PlayerEntity>
         ConfigureProperty(entity, e => e.SkillSwordTries, null, "0");
         ConfigureProperty(entity, e => e.Vocation, "int(11)", "0");
         ConfigureProperty(entity, e => e.RemainingRecoverySeconds, "int(11)", "0");
+        ConfigureProperty(entity, e => e.FightMode, "byte", "2");
+        ConfigureProperty(entity, e => e.ChaseMode, "byte", "0");
 
         entity.HasOne(d => d.Account)
             .WithMany(p => p.Players)

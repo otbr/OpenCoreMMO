@@ -1,10 +1,12 @@
+using NeoServer.Game.Common.Creatures.Players;
+
 namespace NeoServer.Web.Shared.ViewModels.Request;
 
-public class PlayerPostRequest
+public class PlayerRequestViewModel : IViewModel
 {
     public string Name { get; set; }
-    public int Sex { get; set; }
-    public int Vocation { get; set; }
+    public Gender Sex { get; set; }
+    public byte Vocation { get; set; }
     public int Town { get; set; }
     public int AccountId { get; set; }
     public int WorldId { get; set; }

@@ -7,5 +7,5 @@ public interface IPlayerApiService
 {
     Task<IEnumerable<PlayerResponseViewModel>> GetAll();
     Task<PlayerResponseViewModel> GetById(int playerId);
-    Task Create(PlayerPostRequest playerPostRequest);
+    Task<PlayerResponseViewModel> Create(PlayerRequestViewModel playerPostRequest);
 }

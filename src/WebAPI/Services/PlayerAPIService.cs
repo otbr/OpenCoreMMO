@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using NeoServer.Data.Entities;
 using NeoServer.Data.Interfaces;
-using NeoServer.Game.Common.Creatures.Players;
 using NeoServer.Web.API.Services.Interfaces;
+using NeoServer.Web.Shared.Exceptions;
 using NeoServer.Web.Shared.ViewModels.Request;
 using NeoServer.Web.Shared.ViewModels.Response;
 
@@ -13,6 +13,7 @@ public class PlayerApiService : BaseApiService, IPlayerApiService
     #region private members
 
     private readonly IPlayerRepository _playerRepository;
+    private readonly IAccountRepository _accountRepository;
 
     #endregion
 
@@ -20,9 +21,11 @@ public class PlayerApiService : BaseApiService, IPlayerApiService
 
     public PlayerApiService(
         IMapper mapper,
-        IPlayerRepository playerRepository) : base(mapper)
+        IPlayerRepository playerRepository,
+        IAccountRepository accountRepository) : base(mapper)
     {
         _playerRepository = playerRepository;
+        _accountRepository = accountRepository;
     }
 
     #endregion constructors
@@ -39,50 +42,31 @@ public class PlayerApiService : BaseApiService, IPlayerApiService
     public async Task<PlayerResponseViewModel> GetById(int playerId)
     {
         var player = await _playerRepository.GetAsync(playerId);
+
+        if (player == null)
+            throw new NeoNotFoundException("Player not found!");
+
         var response = Mapper.Map<PlayerResponseViewModel>(player);
         return response;
     }
 
-    public async Task Create(PlayerPostRequest playerPostRequest)
+    public async Task<PlayerResponseViewModel> Create(PlayerRequestViewModel request)
     {
-        await _playerRepository.Add(new PlayerEntity
-        {
-            AccountId = playerPostRequest.AccountId,
-            Level = 8,
-            Capacity = 470,
-            Experience = 4200,
-            Gender = (Gender)playerPostRequest.Sex,
-            WorldId = 1,
-            Health = 185,
-            MaxHealth = 185,
-            Mana = 90,
-            MaxMana = 90,
-            Soul = 100,
-            Speed = 234,
-            Name = playerPostRequest.Name,
-            FightMode = FightMode.Balanced,
-            LookType = 130,
-            LookBody = 69,
-            LookFeet = 95,
-            LookHead = 78,
-            LookLegs = 58,
-            MagicLevel = 1,
-            Vocation = (byte)playerPostRequest.Vocation,
-            ChaseMode = ChaseMode.Stand,
-            MaxSoul = 100,
-            PlayerType = 1,
-            PosX = playerPostRequest.PosX,
-            PosY = playerPostRequest.PosY,
-            PosZ = playerPostRequest.PosZ,
-            SkillAxe = 10,
-            SkillDist = 10,
-            SkillClub = 10,
-            SkillSword = 10,
-            SkillShielding = 10,
-            SkillFist = 10,
-            TownId = playerPostRequest.Town,
-            SkillFishing = 10
-        });
+        var existentAccount = await _accountRepository.GetAsync(request.AccountId);
+
+        if (existentAccount != null)
+            throw new NeoNotFoundException("Account not found!");
+
+        var existentPlayer = await _playerRepository.FindByAsync(c => c.Name == request.Name);
+
+        if (existentPlayer != null)
+            throw new NeoConflictException("Player with same Name already registered!");
+
+        var player = Mapper.Map<PlayerEntity>(request);
+
+        await _playerRepository.Insert(player);
+
+        return Mapper.Map<PlayerResponseViewModel>(player);
     }
 
     #endregion

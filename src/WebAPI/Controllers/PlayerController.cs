@@ -37,10 +37,14 @@ public class PlayerController : BaseController
         return Response(await _playerService.GetById(playerId));
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Post([FromBody] PlayerPostRequest player)
+    [HttpPost()]
+    public async Task<IActionResult> Create([FromBody] PlayerRequestViewModel request)
     {
-        await _playerService.Create(player);
+        var result = await _playerService.Create(request);
+
+        if (result != null)
+            return Response(result);
+
         return Ok();
     }
 
