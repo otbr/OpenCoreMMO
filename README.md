@@ -1,9 +1,9 @@
 
 
 <h1 align="center">
-  <img align="center" width="120px" src="https://github.com/caioavidal/OpenCoreMMO/blob/develop/ocmsquare.png?raw=true" target="_blank"  />
+  <img align="center" width="120px" src="https://cdn.discordapp.com/attachments/1071163970167263343/1151615520395767879/solarserver0.png" target="_blank"  />
   <br>
-  OPENCOREMMO</h1>
+  SOLAR SERVER</h1>
 <p align="center">
   <a href="https://codecov.io/gh/caioavidal/OpenCoreMMO">
   <img align="center" src="https://codecov.io/gh/caioavidal/OpenCoreMMO/branch/develop/graph/badge.svg" />
