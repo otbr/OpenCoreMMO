@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Sockets;
-using NeoServer.Game.Common.Contracts.Creatures;
-using NeoServer.Networking.Packets.Messages;
-using NeoServer.Networking.Packets.Outgoing.Login;
-using NeoServer.Networking.Packets.Security;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Shared.Security;
 using Serilog;
 
-namespace NeoServer.Networking.Packets.Connection;
+namespace NeoServer.Networking.Shared.Connection;
 
 public class Connection : IConnection
 {
@@ -120,7 +116,8 @@ public class Connection : IConnection
     {
         var message = new NetworkMessage();
 
-        new FirstConnectionPacket().WriteToMessage(message);
+        //TODO: MUNIZ
+        //new FirstConnectionPacket().WriteToMessage(message);
 
         SendMessage(message);
     }
@@ -165,7 +162,8 @@ public class Connection : IConnection
 
         if (!string.IsNullOrWhiteSpace(text))
         {
-            new LoginFailurePacket(text).WriteToMessage(message);
+            //TODO: MUNIZ
+            //new LoginFailurePacket(text).WriteToMessage(message);
             message.AddLength();
             var encryptedMessage = Xtea.Encrypt(message, XteaKey);
 

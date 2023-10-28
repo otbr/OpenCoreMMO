@@ -3,9 +3,10 @@ using NeoServer.Data.InMemory.DataStores;
 using NeoServer.Game.Common.Chats;
 using NeoServer.Game.Common.Contracts.Creatures;
 using NeoServer.Networking.Packets.Incoming;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
 using NeoServer.Server.Commands.Player;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
 using Xunit;
 
 namespace NeoServer.Server.Tests.Commands;

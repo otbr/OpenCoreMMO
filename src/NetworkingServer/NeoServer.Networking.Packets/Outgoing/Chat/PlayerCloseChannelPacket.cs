@@ -1,6 +1,6 @@
-﻿using NeoServer.Server.Common.Contracts.Network;
-
-namespace NeoServer.Networking.Packets.Outgoing.Chat;
+﻿namespace NeoServer.Networking.Packets.Outgoing.Chat;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 
 public class PlayerCloseChannelPacket : OutgoingPacket
 {

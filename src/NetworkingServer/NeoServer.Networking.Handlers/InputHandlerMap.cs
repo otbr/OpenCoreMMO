@@ -7,7 +7,7 @@ using NeoServer.Networking.Handlers.Player.Movement;
 using NeoServer.Networking.Handlers.Player.Party;
 using NeoServer.Networking.Handlers.Shop;
 using NeoServer.Networking.Handlers.Trade;
-using NeoServer.Server.Common.Contracts.Network.Enums;
+using NeoServer.Networking.Shared.Enums;
 
 namespace NeoServer.Networking.Handlers;
 

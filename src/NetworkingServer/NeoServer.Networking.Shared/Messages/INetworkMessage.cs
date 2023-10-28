@@ -1,7 +1,6 @@
-﻿using System;
-using NeoServer.Game.Common.Location.Structs;
+﻿using System; 
 
-namespace NeoServer.Server.Common.Contracts.Network;
+namespace NeoServer.Networking.Shared.Messages;
 
 public interface INetworkMessage : IReadOnlyNetworkMessage
 {
@@ -12,6 +11,6 @@ public interface INetworkMessage : IReadOnlyNetworkMessage
     void AddUInt16(ushort value);
     void AddUInt32(uint value);
     byte[] AddHeader(bool addChecksum = true);
-    void AddLocation(Location location);
+    void AddLocation(dynamic location);
     void AddLength();
 }

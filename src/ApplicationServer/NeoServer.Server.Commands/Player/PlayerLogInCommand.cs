@@ -3,9 +3,9 @@ using System.Linq;
 using NeoServer.Data.Entities;
 using NeoServer.Loaders.Guilds;
 using NeoServer.Loaders.Interfaces;
+using NeoServer.Networking.Shared.Connection;
 using NeoServer.Server.Common.Contracts;
 using NeoServer.Server.Common.Contracts.Commands;
-using NeoServer.Server.Common.Contracts.Network;
 using Serilog;
 
 namespace NeoServer.Server.Commands.Player;

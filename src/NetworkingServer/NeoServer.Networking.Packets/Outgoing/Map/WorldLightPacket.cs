@@ -1,6 +1,6 @@
-﻿using NeoServer.Server.Common.Contracts.Network;
-
-namespace NeoServer.Networking.Packets.Outgoing.Map;
+﻿namespace NeoServer.Networking.Packets.Outgoing.Map;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 
 public class WorldLightPacket : OutgoingPacket
 {

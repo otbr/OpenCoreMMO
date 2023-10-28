@@ -1,12 +1,9 @@
+using NeoServer.Networking.Shared.Enums;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using NeoServer.Game.Common.Helpers;
-using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Server.Common.Contracts.Network;
-using NeoServer.Server.Common.Contracts.Network.Enums;
 
-namespace NeoServer.Networking.Packets.Messages;
+namespace NeoServer.Networking.Shared.Messages;
 
 public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
 {
@@ -15,7 +12,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
 
     public ReadOnlyNetworkMessage(byte[] buffer, int length)
     {
-        if (buffer.IsNull()) return;
+        if (buffer == null) return;
 
         Buffer = buffer;
         Length = length;
@@ -30,7 +27,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
     /// </summary>
     public ReadOnlySpan<byte> GetMessageInBytes()
     {
-        return Length.IsLessThanZero() ? EmptyBuffer : Length == 0 ? Buffer : Buffer[..Length];
+        return Length < 0 ? EmptyBuffer : Length == 0 ? Buffer : Buffer[..Length];
     }
 
     public int BytesRead { get; private set; }
@@ -42,7 +39,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
         switch (isAuthenticated)
         {
             case true:
-                if (Buffer.Length.IsLessThan(9)) return CTSPacketType.None;
+                if (Buffer.Length < 9) return CTSPacketType.None;
                 SkipBytes(6);
                 GetUInt16();
                 var packetType = (CTSPacketType)GetByte();
@@ -50,7 +47,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
                 return packetType;
 
             case false:
-                if (Buffer.Length.IsLessThan(6)) return CTSPacketType.None;
+                if (Buffer.Length <6) return CTSPacketType.None;
                 IncomingPacket = (CTSPacketType)Buffer[6];
                 return IncomingPacket;
 
@@ -110,7 +107,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
 
     public void Resize(int length)
     {
-        if (length.IsLessThanZero()) return;
+        if (length < 0) return;
 
         Length = length;
         BytesRead = 0;
@@ -123,10 +120,10 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
         Length = 0;
     }
 
-    public Location GetLocation()
-    {
-        return new Location { X = GetUInt16(), Y = GetUInt16(), Z = GetByte() };
-    }
+    //public Location GetLocation()
+    //{
+    //    return new Location { X = GetUInt16(), Y = GetUInt16(), Z = GetByte() };
+    //}
 
     private void IncreaseByteRead(int length)
     {

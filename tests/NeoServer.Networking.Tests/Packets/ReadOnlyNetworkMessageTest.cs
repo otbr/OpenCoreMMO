@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Networking.Packets.Messages;
-using NeoServer.Server.Common.Contracts.Network.Enums;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 using Xunit;
 
 namespace NeoServer.Networking.Tests.Packets;
@@ -124,7 +124,7 @@ public class ReadOnlyNetworkMessageShould
         var sut = new ReadOnlyNetworkMessage(data.ToArray(), data.Count);
 
         var expected = new Location { X = 1000, Y = 900, Z = 7 };
-        Assert.Equal(expected, sut.GetLocation());
+        Assert.Equal(expected, new Location { X = sut.GetUInt16(), Y = sut.GetUInt16(), Z = sut.GetByte() });
     }
 
     [Fact]

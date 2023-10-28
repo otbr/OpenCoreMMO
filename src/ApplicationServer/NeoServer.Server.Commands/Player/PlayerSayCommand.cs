@@ -4,9 +4,9 @@ using NeoServer.Game.Common.Contracts.Creatures;
 using NeoServer.Game.Common.Contracts.DataStores;
 using NeoServer.Networking.Packets.Incoming;
 using NeoServer.Networking.Packets.Outgoing;
+using NeoServer.Networking.Shared.Connection;
 using NeoServer.Server.Common.Contracts;
 using NeoServer.Server.Common.Contracts.Commands;
-using NeoServer.Server.Common.Contracts.Network;
 
 namespace NeoServer.Server.Commands.Player;
 

@@ -1,6 +1,7 @@
 using System;
-using NeoServer.Server.Common.Contracts.Network;
-using NeoServer.Server.Common.Contracts.Network.Enums;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 using Serilog;
 
 namespace NeoServer.Networking.Handlers.Invalid;

@@ -1,7 +1,6 @@
 ﻿using System;
-using NeoServer.Server.Common.Contracts.Network;
 
-namespace NeoServer.Networking.Packets.Connection;
+namespace NeoServer.Networking.Shared.Connection;
 
 public class ConnectionEventArgs : EventArgs, IConnectionEventArgs
 {

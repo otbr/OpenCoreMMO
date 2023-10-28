@@ -1,5 +1,8 @@
 ﻿using NeoServer.Data.Entities;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Packets.Outgoing.Login;
 

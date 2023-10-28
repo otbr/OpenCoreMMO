@@ -2,7 +2,8 @@
 using NeoServer.Game.Common.Contracts.DataStores;
 using NeoServer.Networking.Packets.Outgoing.Chat;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Handlers.Chat;
 

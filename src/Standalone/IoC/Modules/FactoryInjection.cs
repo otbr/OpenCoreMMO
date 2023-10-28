@@ -13,8 +13,8 @@ using NeoServer.Game.Items.Factories.AttributeFactory;
 using NeoServer.Game.World.Factories;
 using NeoServer.Networking.Handlers;
 using NeoServer.Networking.Handlers.Invalid;
-using NeoServer.Server.Common.Contracts.Network;
-using NeoServer.Server.Common.Contracts.Network.Enums;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Enums;
 using Serilog;
 
 namespace NeoServer.Server.Standalone.IoC.Modules;

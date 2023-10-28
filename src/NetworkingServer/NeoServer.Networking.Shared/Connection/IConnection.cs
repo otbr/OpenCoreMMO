@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using NeoServer.Networking.Shared.Messages;
 
-namespace NeoServer.Server.Common.Contracts.Network;
+namespace NeoServer.Networking.Shared.Connection;
 
 public interface IConnection
 {

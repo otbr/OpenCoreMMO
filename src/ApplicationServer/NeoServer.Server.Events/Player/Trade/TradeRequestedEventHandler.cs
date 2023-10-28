@@ -3,8 +3,8 @@ using NeoServer.Game.Systems.SafeTrade;
 using NeoServer.Game.Systems.SafeTrade.Request;
 using NeoServer.Networking.Packets.Outgoing;
 using NeoServer.Networking.Packets.Outgoing.Trade;
+using NeoServer.Networking.Shared.Connection;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
 
 namespace NeoServer.Server.Events.Player.Trade;
 

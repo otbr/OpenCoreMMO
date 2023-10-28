@@ -6,10 +6,11 @@ using NeoServer.Networking.Packets.Incoming;
 using NeoServer.Networking.Packets.Outgoing;
 using NeoServer.Server.Commands.Player;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
 using NeoServer.Server.Common.Enums;
 using NeoServer.Server.Configurations;
 using NeoServer.Server.Tasks;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Handlers.LogIn;
 

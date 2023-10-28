@@ -1,7 +1,8 @@
 ﻿using System;
 using NeoServer.Game.Common.Contracts.Creatures;
 using NeoServer.Game.Common.Creatures;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Packets.Outgoing.Player;
 

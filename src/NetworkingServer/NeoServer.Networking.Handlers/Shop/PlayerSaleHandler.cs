@@ -2,8 +2,9 @@
 using NeoServer.Game.Common.Contracts.DataStores;
 using NeoServer.Networking.Packets.Incoming.Shop;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
 using NeoServer.Server.Tasks;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Handlers.Shop;
 

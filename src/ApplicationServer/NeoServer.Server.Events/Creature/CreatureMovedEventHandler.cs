@@ -10,7 +10,7 @@ using NeoServer.Networking.Packets.Outgoing.Effect;
 using NeoServer.Networking.Packets.Outgoing.Item;
 using NeoServer.Networking.Packets.Outgoing.Map;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Connection;
 
 namespace NeoServer.Server.Events.Creature;
 

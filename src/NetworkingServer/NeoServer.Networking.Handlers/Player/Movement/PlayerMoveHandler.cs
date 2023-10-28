@@ -1,8 +1,9 @@
 ﻿using NeoServer.Game.Common.Location;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
-using NeoServer.Server.Common.Contracts.Network.Enums;
 using NeoServer.Server.Tasks;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Shared.Enums;
 
 namespace NeoServer.Networking.Handlers.Player.Movement;
 

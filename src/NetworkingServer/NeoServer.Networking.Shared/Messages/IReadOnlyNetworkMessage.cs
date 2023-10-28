@@ -1,8 +1,7 @@
+using NeoServer.Networking.Shared.Enums;
 using System;
-using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Server.Common.Contracts.Network.Enums;
 
-namespace NeoServer.Server.Common.Contracts.Network;
+namespace NeoServer.Networking.Shared.Messages;
 
 // <summary>
 /// Interface for read-only network messages.
@@ -97,5 +96,5 @@ public interface IReadOnlyNetworkMessage
     ///     Reads a location from the message.
     /// </summary>
     /// <returns>The location.</returns>
-    Location GetLocation();
+    //Location GetLocation();
 }

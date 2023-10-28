@@ -1,6 +1,6 @@
-﻿using NeoServer.Server.Common.Contracts.Network;
-
-namespace NeoServer.Networking.Packets.Outgoing.Creature;
+﻿namespace NeoServer.Networking.Packets.Outgoing.Creature;
+using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Shared.Messages;
 
 public class CreatureChangeSpeedPacket : OutgoingPacket
 {

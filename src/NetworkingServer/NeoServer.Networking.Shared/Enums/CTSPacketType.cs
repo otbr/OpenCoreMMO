@@ -1,4 +1,4 @@
-namespace NeoServer.Server.Common.Contracts.Network.Enums;
+namespace NeoServer.Networking.Shared.Enums;
 
 public enum CTSPacketType : byte
 {

@@ -3,9 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using NeoServer.Networking.Packets.Connection;
 using NeoServer.Networking.Protocols;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Connection;
 using Serilog;
 
 namespace NeoServer.Networking.Listeners;

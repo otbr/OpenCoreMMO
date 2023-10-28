@@ -1,5 +1,5 @@
 ﻿using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Packets.Incoming;
 
@@ -7,10 +7,10 @@ public class UseItemOnPacket : IncomingPacket
 {
     public UseItemOnPacket(IReadOnlyNetworkMessage message)
     {
-        Location = message.GetLocation();
+        Location = new Location(message.GetUInt16(), message.GetUInt16(), message.GetByte());
         ClientId = message.GetUInt16();
         StackPosition = message.GetByte();
-        ToLocation = message.GetLocation();
+        ToLocation = new Location(message.GetUInt16(), message.GetUInt16(), message.GetByte());
         ToClientId = message.GetUInt16();
         ToStackPosition = message.GetByte();
     }

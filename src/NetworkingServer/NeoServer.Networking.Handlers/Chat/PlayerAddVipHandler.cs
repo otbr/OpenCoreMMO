@@ -9,8 +9,9 @@ using NeoServer.Game.Common.Helpers;
 using NeoServer.Loaders.Interfaces;
 using NeoServer.Networking.Packets.Incoming.Chat;
 using NeoServer.Networking.Packets.Outgoing;
+using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Shared.Messages;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Server.Common.Contracts.Network;
 using NeoServer.Server.Tasks;
 using Serilog;
 

@@ -1,5 +1,5 @@
 ﻿using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Messages;
 
 namespace NeoServer.Networking.Packets.Incoming;
 
@@ -7,10 +7,10 @@ public class ItemThrowPacket : IncomingPacket
 {
     public ItemThrowPacket(IReadOnlyNetworkMessage message)
     {
-        FromLocation = message.GetLocation();
+        FromLocation = new Location(message.GetUInt16(), message.GetUInt16(), message.GetByte());
         ItemClientId = message.GetUInt16();
         FromStackPosition = message.GetByte();
-        ToLocation = message.GetLocation();
+        ToLocation = new Location(message.GetUInt16(), message.GetUInt16(), message.GetByte());
         Count = message.GetByte();
     }
 

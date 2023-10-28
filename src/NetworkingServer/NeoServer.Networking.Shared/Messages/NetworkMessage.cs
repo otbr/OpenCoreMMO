@@ -1,11 +1,9 @@
-﻿using System;
+﻿using NeoServer.Networking.Shared.Security;
+using System;
 using System.Buffers;
 using System.Text;
-using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Server.Common.Contracts.Network;
-using NeoServer.Server.Security;
 
-namespace NeoServer.Networking.Packets.Messages;
+namespace NeoServer.Networking.Shared.Messages;
 
 /// <summary>
 ///     Contains all the methods to handle incoming and outgoing message from/to client
@@ -31,7 +29,7 @@ public class NetworkMessage : ReadOnlyNetworkMessage, INetworkMessage
     ///     Inserts a location point on the buffer
     /// </summary>
     /// <param name="location"></param>
-    public void AddLocation(Location location)
+    public void AddLocation(dynamic location)
     {
         AddUInt16(location.X);
         AddUInt16(location.Y);

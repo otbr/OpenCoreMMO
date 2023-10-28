@@ -1,8 +1,7 @@
-using System;
-using NeoServer.Networking.Shared.Enums;
 using NeoServer.Networking.Shared.Messages;
+using System;
 
-namespace NeoServer.Networking.Packets.Security;
+namespace NeoServer.Networking.Shared.Security;
 
 public static class Xtea
 {

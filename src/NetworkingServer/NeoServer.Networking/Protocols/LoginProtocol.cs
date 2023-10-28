@@ -1,6 +1,6 @@
 ﻿using System;
 using NeoServer.Networking.Handlers;
-using NeoServer.Server.Common.Contracts.Network;
+using NeoServer.Networking.Shared.Connection;
 
 namespace NeoServer.Networking.Protocols;
 
