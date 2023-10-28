@@ -25,7 +25,7 @@ public class MessageToChannelPacket : OutgoingPacket
         if (string.IsNullOrWhiteSpace(Message)) return;
         if (ChannelId == default) return;
 
-        message.AddByte((byte)GameOutgoingPacketType.SendPrivateMessage);
+        message.AddByte((byte)STCPacketType.SendPrivateMessage);
         message.AddUInt32(0x00);
 
         var speechType = TalkType;

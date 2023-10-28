@@ -16,7 +16,7 @@ public class RemoveTileThingPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.RemoveAtStackPos);
+        message.AddByte((byte)STCPacketType.RemoveAtStackPos);
         message.AddLocation(tile.Location);
         message.AddByte(stackPosition);
     }

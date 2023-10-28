@@ -21,7 +21,7 @@ public class PlayerSendPrivateMessagePacket : OutgoingPacket
     {
         if (TalkType == SpeechType.None) return;
 
-        message.AddByte((byte)GameOutgoingPacketType.SendPrivateMessage);
+        message.AddByte((byte)STCPacketType.SendPrivateMessage);
         uint statementId = 0;
 
         message.AddUInt32(++statementId);

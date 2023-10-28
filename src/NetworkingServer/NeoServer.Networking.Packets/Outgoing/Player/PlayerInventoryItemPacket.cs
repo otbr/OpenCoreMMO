@@ -19,14 +19,14 @@ public class PlayerInventoryItemPacket : OutgoingPacket
     {
         if (inventory[slot] == null)
         {
-            message.AddByte((byte)GameOutgoingPacketType.InventoryEmpty);
+            message.AddByte((byte)STCPacketType.InventoryEmpty);
             message.AddByte((byte)slot);
         }
         else
         {
-            message.AddByte((byte)GameOutgoingPacketType.InventoryItem);
+            message.AddByte((byte)STCPacketType.InventoryItem);
             message.AddByte((byte)slot);
-            message.AddItem(inventory[slot]);
+            message.AddUInt16(inventory[slot].ClientId);
         }
     }
 }

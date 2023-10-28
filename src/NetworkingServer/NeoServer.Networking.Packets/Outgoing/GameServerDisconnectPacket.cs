@@ -13,7 +13,7 @@ public sealed class GameServerDisconnectPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.Disconnect);
+        message.AddByte((byte)STCPacketType.Disconnect);
         message.AddString(reason);
     }
 }

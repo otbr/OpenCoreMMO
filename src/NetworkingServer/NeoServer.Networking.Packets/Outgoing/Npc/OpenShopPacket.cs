@@ -17,7 +17,7 @@ public class OpenShopPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.OpenShop);
+        message.AddByte((byte)STCPacketType.OpenShop);
 
         var itemsCount = (ushort)Math.Min(Items.Count(), ushort.MaxValue);
         message.AddByte((byte)itemsCount);

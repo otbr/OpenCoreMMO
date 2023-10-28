@@ -14,7 +14,7 @@ public class CreatureOutfitPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CreatureOutfit);
+        message.AddByte((byte)STCPacketType.CreatureOutfit);
 
         message.AddUInt32(creature.CreatureId);
         message.AddUInt16(creature.Outfit.LookType);

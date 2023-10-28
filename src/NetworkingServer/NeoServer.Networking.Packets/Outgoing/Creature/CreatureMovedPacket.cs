@@ -18,7 +18,7 @@ public class CreatureMovedPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CreatureMoved);
+        message.AddByte((byte)STCPacketType.CreatureMoved);
 
         message.AddLocation(location);
         message.AddByte(stackPosition);

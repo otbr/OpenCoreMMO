@@ -22,9 +22,9 @@ public class UpdateTileItemPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.TransformThing);
+        message.AddByte((byte)STCPacketType.TransformThing);
         message.AddLocation(location);
         message.AddByte(stackPosition);
-        message.AddItem(item);
+        message.AddUInt16(item.ClientId);
     }
 }

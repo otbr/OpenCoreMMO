@@ -17,7 +17,7 @@ public class PartyEmblemPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CreatureEmblem);
+        message.AddByte((byte)STCPacketType.CreatureEmblem);
         message.AddUInt32(creature.CreatureId);
         message.AddByte((byte)emblem);
     }

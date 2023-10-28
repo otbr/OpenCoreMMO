@@ -19,12 +19,12 @@ public class TradeRequestPacket : IOutgoingPacket
     public void WriteToMessage(INetworkMessage message)
     {
         message.AddByte(Acknowledged
-            ? (byte)GameOutgoingPacketType.AcknowlegdeTradeRequest
-            : (byte)GameOutgoingPacketType.TradeRequest);
+            ? (byte)STCPacketType.AcknowlegdeTradeRequest
+            : (byte)STCPacketType.TradeRequest);
 
         message.AddString(PlayerName);
 
         message.AddByte((byte)Items.Length);
-        foreach (var item in Items) message.AddItem(item);
+        foreach (var item in Items) message.AddUInt16(item.ClientId);
     }
 }

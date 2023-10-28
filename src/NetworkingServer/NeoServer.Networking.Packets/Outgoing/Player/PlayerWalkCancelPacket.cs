@@ -14,7 +14,7 @@ public class PlayerWalkCancelPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.PlayerWalkCancel);
+        message.AddByte((byte)STCPacketType.PlayerWalkCancel);
         message.AddByte((byte)player.Direction);
     }
 }

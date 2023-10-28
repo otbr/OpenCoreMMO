@@ -17,10 +17,10 @@ public class OpenContainerPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ContainerOpen);
+        message.AddByte((byte)STCPacketType.ContainerOpen);
 
         message.AddByte(containerId);
-        message.AddItem(container);
+        message.AddUInt16(container.ClientId);
         message.AddString(container.Name);
         message.AddByte(container.Capacity);
 
@@ -28,6 +28,6 @@ public class OpenContainerPacket : OutgoingPacket
 
         message.AddByte(Math.Min((byte)0xFF, container.SlotsUsed));
 
-        for (byte i = 0; i < container.SlotsUsed; i++) message.AddItem(container.Items[i]);
+        for (byte i = 0; i < container.SlotsUsed; i++) message.AddUInt16(container.Items[i].ClientId);
     }
 }

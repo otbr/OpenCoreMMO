@@ -18,10 +18,10 @@ public class UpdateItemContainerPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ContainerUpdateItem);
+        message.AddByte((byte)STCPacketType.ContainerUpdateItem);
 
         message.AddByte(containerId);
         message.AddByte(slot);
-        message.AddItem(item);
+        message.AddUInt16(item.ClientId);
     }
 }

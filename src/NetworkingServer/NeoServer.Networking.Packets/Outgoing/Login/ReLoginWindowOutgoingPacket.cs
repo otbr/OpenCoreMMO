@@ -6,6 +6,6 @@ public class ReLoginWindowOutgoingPacket : OutgoingPacket
 {
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ReLoginWindow);
+        message.AddByte((byte)STCPacketType.ReLoginWindow);
     }
 }

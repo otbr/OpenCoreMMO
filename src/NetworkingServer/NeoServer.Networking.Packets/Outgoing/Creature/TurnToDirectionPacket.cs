@@ -19,10 +19,10 @@ public class TurnToDirectionPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.TransformThing);
+        message.AddByte((byte)STCPacketType.TransformThing);
         message.AddLocation(creature.Location);
         message.AddByte(stackPosition);
-        message.AddUInt16((byte)GameOutgoingPacketType.CreatureTurn);
+        message.AddUInt16((byte)STCPacketType.CreatureTurn);
         message.AddUInt32(creature.CreatureId);
         message.AddByte((byte)direction);
     }

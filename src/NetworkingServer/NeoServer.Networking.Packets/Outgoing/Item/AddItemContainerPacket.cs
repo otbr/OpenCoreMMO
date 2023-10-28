@@ -16,9 +16,9 @@ public class AddItemContainerPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ContainerAddItem);
+        message.AddByte((byte)STCPacketType.ContainerAddItem);
 
         message.AddByte(containerId);
-        message.AddItem(item);
+        message.AddUInt16(item.ClientId);
     }
 }

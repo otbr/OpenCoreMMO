@@ -13,7 +13,7 @@ public class CloseContainerPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ContainerClose);
+        message.AddByte((byte)STCPacketType.ContainerClose);
 
         message.AddByte(containerId);
     }

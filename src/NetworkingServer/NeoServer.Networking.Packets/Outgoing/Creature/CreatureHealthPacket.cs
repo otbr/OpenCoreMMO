@@ -15,7 +15,7 @@ public class CreatureHealthPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CreatureHealth);
+        message.AddByte((byte)STCPacketType.CreatureHealth);
 
         message.AddUInt32(creature.CreatureId);
 

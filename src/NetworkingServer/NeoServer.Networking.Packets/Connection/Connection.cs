@@ -180,14 +180,14 @@ public class Connection : IConnection
         IsAuthenticated = true;
     }
 
-    public void SetConnectionOwner(IPlayer player)
+    public void SetConnectionOwner(uint creatureId)
     {
         if (CreatureId != 0) throw new InvalidOperationException("Connection already has a Player Id");
         SetAsAuthenticated();
 
         OutgoingPackets = new Queue<IOutgoingPacket>();
 
-        CreatureId = player.CreatureId;
+        CreatureId = creatureId;
     }
 
     private void OnRead(IAsyncResult ar)

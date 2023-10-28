@@ -15,7 +15,7 @@ public class WorldLightPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.WorldLight);
+        message.AddByte((byte)STCPacketType.WorldLight);
 
         message.AddByte(Level);
         message.AddByte(Color);

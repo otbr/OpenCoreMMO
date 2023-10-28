@@ -77,17 +77,17 @@ public static class FactoryInjection
 
     private static void RegisterIncomingPacketFactory(this ContainerBuilder builder)
     {
-        bool RequireAuthentication(GameIncomingPacketType gameIncomingPacketType)
+        bool RequireAuthentication(CTSPacketType gameIncomingPacketType)
         {
-            return gameIncomingPacketType is not (GameIncomingPacketType.PlayerLogIn
-                or GameIncomingPacketType.PlayerLoginRequest);
+            return gameIncomingPacketType is not (CTSPacketType.PlayerLogIn
+                or CTSPacketType.PlayerLoginRequest);
         }
 
         builder.Register((c, p) =>
         {
             var conn = p.TypedAs<IConnection>();
 
-            var packet = GameIncomingPacketType.PlayerLogOut;
+            var packet = CTSPacketType.PlayerLogOut;
 
             if (!conn.Disconnected) packet = conn.InMessage.GetIncomingPacketType(conn.IsAuthenticated);
 

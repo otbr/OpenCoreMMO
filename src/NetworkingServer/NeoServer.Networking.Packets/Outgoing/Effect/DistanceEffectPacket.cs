@@ -18,7 +18,7 @@ public class DistanceEffectPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.DistanceShootEffect);
+        message.AddByte((byte)STCPacketType.DistanceShootEffect);
         message.AddLocation(location);
         message.AddLocation(toLocation);
         message.AddByte(effect);

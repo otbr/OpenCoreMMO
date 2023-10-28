@@ -201,7 +201,7 @@ public class ReadOnlyNetworkMessageShould
     {
         var sut = new ReadOnlyNetworkMessage(new byte[4], 4);
 
-        Assert.Equal(GameIncomingPacketType.None, sut.IncomingPacket);
+        Assert.Equal(CTSPacketType.None, sut.IncomingPacket);
     }
 
     [Fact]
@@ -213,7 +213,7 @@ public class ReadOnlyNetworkMessageShould
 
         sut.GetIncomingPacketType(true);
 
-        Assert.Equal(GameIncomingPacketType.PlayerLoginRequest, sut.IncomingPacket);
+        Assert.Equal(CTSPacketType.PlayerLoginRequest, sut.IncomingPacket);
     }
 
     [Fact]
@@ -223,7 +223,7 @@ public class ReadOnlyNetworkMessageShould
 
         var sut = new ReadOnlyNetworkMessage(data, 9);
 
-        Assert.Equal(GameIncomingPacketType.PlayerLogOut, sut.GetIncomingPacketType(true));
+        Assert.Equal(CTSPacketType.PlayerLogOut, sut.GetIncomingPacketType(true));
     }
 
     [Fact]
@@ -233,7 +233,7 @@ public class ReadOnlyNetworkMessageShould
 
         var sut = new ReadOnlyNetworkMessage(data, 9);
 
-        Assert.Equal(GameIncomingPacketType.PlayerLogOut, sut.GetIncomingPacketType(false));
+        Assert.Equal(CTSPacketType.PlayerLogOut, sut.GetIncomingPacketType(false));
     }
 
     [Fact]
@@ -243,7 +243,7 @@ public class ReadOnlyNetworkMessageShould
 
         var sut = new ReadOnlyNetworkMessage(data, 3);
 
-        Assert.Equal(GameIncomingPacketType.None, sut.GetIncomingPacketType(false));
+        Assert.Equal(CTSPacketType.None, sut.GetIncomingPacketType(false));
     }
 
     [Fact]
@@ -253,7 +253,7 @@ public class ReadOnlyNetworkMessageShould
 
         var sut = new ReadOnlyNetworkMessage(data, 3);
 
-        Assert.Equal(GameIncomingPacketType.None, sut.GetIncomingPacketType(false));
+        Assert.Equal(CTSPacketType.None, sut.GetIncomingPacketType(false));
     }
 
     [Fact]

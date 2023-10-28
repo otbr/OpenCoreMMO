@@ -24,7 +24,7 @@ public class CreatureMovedUpPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.FloorChangeUp);
+        message.AddByte((byte)STCPacketType.FloorChangeUp);
 
         var skip = -1;
         var x = (ushort)(_fromLocation.X - MapViewPort.MaxClientViewPortX);
@@ -51,11 +51,11 @@ public class CreatureMovedUpPacket : OutgoingPacket
         }
 
         //west
-        message.AddByte((byte)GameOutgoingPacketType.MapSliceWest);
+        message.AddByte((byte)STCPacketType.MapSliceWest);
         message.AddBytes(_map.GetDescription(_creature, x, (ushort)(y + 1), _toLocation.Z, 1).ToArray());
 
         //north
-        message.AddByte((byte)GameOutgoingPacketType.MapSliceNorth);
+        message.AddByte((byte)STCPacketType.MapSliceNorth);
         message.AddBytes(_map
             .GetDescription(_creature, x, y, _toLocation.Z, (byte)MapViewPort.MaxClientViewPortX * 2 + 2, 1).ToArray());
     }

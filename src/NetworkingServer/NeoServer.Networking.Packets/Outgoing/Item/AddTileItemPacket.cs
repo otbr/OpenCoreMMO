@@ -16,9 +16,9 @@ public class AddTileItemPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.AddAtStackPos);
+        message.AddByte((byte)STCPacketType.AddAtStackPos);
         message.AddLocation(item.Location);
         message.AddByte(stackPosition);
-        message.AddItem(item);
+        message.AddUInt16(item.ClientId);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace NeoServer.Networking.Packets.Outgoing;
 
-public enum GameOutgoingPacketType : byte
+public enum STCPacketType : byte
 {
     NoType = 0x00,
     Ping = 0x1E,

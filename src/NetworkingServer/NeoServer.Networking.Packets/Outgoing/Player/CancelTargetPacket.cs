@@ -6,7 +6,7 @@ public class CancelTargetPacket : OutgoingPacket
 {
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CancelTarget);
+        message.AddByte((byte)STCPacketType.CancelTarget);
         message.AddUInt32(0x00);
     }
 }

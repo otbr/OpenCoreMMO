@@ -35,23 +35,23 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
 
     public int BytesRead { get; private set; }
 
-    public GameIncomingPacketType IncomingPacket { get; private set; } = GameIncomingPacketType.None;
+    public CTSPacketType IncomingPacket { get; private set; } = CTSPacketType.None;
 
-    public GameIncomingPacketType GetIncomingPacketType(bool isAuthenticated)
+    public CTSPacketType GetIncomingPacketType(bool isAuthenticated)
     {
         switch (isAuthenticated)
         {
             case true:
-                if (Buffer.Length.IsLessThan(9)) return GameIncomingPacketType.None;
+                if (Buffer.Length.IsLessThan(9)) return CTSPacketType.None;
                 SkipBytes(6);
                 GetUInt16();
-                var packetType = (GameIncomingPacketType)GetByte();
+                var packetType = (CTSPacketType)GetByte();
                 IncomingPacket = packetType;
                 return packetType;
 
             case false:
-                if (Buffer.Length.IsLessThan(6)) return GameIncomingPacketType.None;
-                IncomingPacket = (GameIncomingPacketType)Buffer[6];
+                if (Buffer.Length.IsLessThan(6)) return CTSPacketType.None;
+                IncomingPacket = (CTSPacketType)Buffer[6];
                 return IncomingPacket;
 
             default:

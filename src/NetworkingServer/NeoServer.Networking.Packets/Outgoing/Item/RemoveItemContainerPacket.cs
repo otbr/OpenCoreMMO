@@ -18,7 +18,7 @@ public class RemoveItemContainerPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ContainerRemoveItem);
+        message.AddByte((byte)STCPacketType.ContainerRemoveItem);
 
         message.AddByte(containerId);
 

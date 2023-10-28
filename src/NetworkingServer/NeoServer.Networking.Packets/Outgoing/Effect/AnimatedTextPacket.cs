@@ -19,7 +19,7 @@ public class AnimatedTextPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.AnimatedText);
+        message.AddByte((byte)STCPacketType.AnimatedText);
         message.AddLocation(location);
         message.AddByte((byte)color);
         message.AddString(text);

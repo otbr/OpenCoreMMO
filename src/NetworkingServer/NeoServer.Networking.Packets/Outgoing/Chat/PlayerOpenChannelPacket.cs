@@ -15,7 +15,7 @@ public class PlayerOpenChannelPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.OpenChannel);
+        message.AddByte((byte)STCPacketType.OpenChannel);
         message.AddUInt16(channelId);
         message.AddString(name);
     }

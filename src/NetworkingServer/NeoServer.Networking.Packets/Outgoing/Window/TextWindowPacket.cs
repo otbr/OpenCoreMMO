@@ -16,9 +16,9 @@ public class TextWindowPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.TextWindow);
+        message.AddByte((byte)STCPacketType.TextWindow);
         message.AddUInt32(windowTextId);
-        message.AddItem(item);
+        message.AddUInt16(item.ClientId);
 
         AddTextLength(message);
 

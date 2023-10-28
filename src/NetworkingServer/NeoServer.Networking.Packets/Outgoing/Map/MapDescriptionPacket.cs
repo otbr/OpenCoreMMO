@@ -19,7 +19,7 @@ public class MapDescriptionPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((int)GameOutgoingPacketType.MapDescription);
+        message.AddByte((int)STCPacketType.MapDescription);
         message.AddLocation(_player.Location);
 
         message.AddBytes(GetMapDescription(_player, _map));

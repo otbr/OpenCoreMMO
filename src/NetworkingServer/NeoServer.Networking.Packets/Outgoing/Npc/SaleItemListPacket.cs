@@ -27,7 +27,7 @@ public class SaleItemListPacket : OutgoingPacket
         var map = Player.Inventory.Map;
         var totalMoney = Player.Inventory.GetTotalMoney(_coinTypeStore) + Player.BankAmount;
 
-        message.AddByte((byte)GameOutgoingPacketType.SaleItemList);
+        message.AddByte((byte)STCPacketType.SaleItemList);
         message.AddUInt32((uint)Math.Min(totalMoney, uint.MaxValue));
 
         byte itemsToSend = 0;

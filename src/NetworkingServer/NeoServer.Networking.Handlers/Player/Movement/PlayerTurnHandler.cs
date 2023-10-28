@@ -24,22 +24,22 @@ public class PlayerTurnHandler : PacketHandler
         _game.Dispatcher.AddEvent(new Event(() => player.TurnTo(direction)));
     }
 
-    private Direction ParseTurnPacket(GameIncomingPacketType turnPacket)
+    private Direction ParseTurnPacket(CTSPacketType turnPacket)
     {
         var direction = Direction.North;
 
         switch (turnPacket)
         {
-            case GameIncomingPacketType.TurnNorth:
+            case CTSPacketType.TurnNorth:
                 direction = Direction.North;
                 break;
-            case GameIncomingPacketType.TurnEast:
+            case CTSPacketType.TurnEast:
                 direction = Direction.East;
                 break;
-            case GameIncomingPacketType.TurnSouth:
+            case CTSPacketType.TurnSouth:
                 direction = Direction.South;
                 break;
-            case GameIncomingPacketType.TurnWest:
+            case CTSPacketType.TurnWest:
                 direction = Direction.West;
                 break;
         }

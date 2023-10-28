@@ -16,8 +16,8 @@ public class PlayerUpdateVipStatusPacket : OutgoingPacket
     public override void WriteToMessage(INetworkMessage message)
     {
         message.AddByte((byte)(online
-            ? GameOutgoingPacketType.OnlineStatusVip
-            : GameOutgoingPacketType.OfflineStatusVip));
+            ? STCPacketType.OnlineStatusVip
+            : STCPacketType.OfflineStatusVip));
         message.AddUInt32(playerId);
     }
 }

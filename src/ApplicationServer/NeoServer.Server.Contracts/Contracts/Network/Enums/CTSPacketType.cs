@@ -1,6 +1,6 @@
 namespace NeoServer.Server.Common.Contracts.Network.Enums;
 
-public enum GameIncomingPacketType : byte
+public enum CTSPacketType : byte
 {
     None = 0x00,
     PlayerLoginRequest = 0x01,

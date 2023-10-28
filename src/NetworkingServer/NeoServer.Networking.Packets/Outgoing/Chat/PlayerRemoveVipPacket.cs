@@ -17,7 +17,7 @@ public class PlayerRemoveVipPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.AddVip);
+        message.AddByte((byte)STCPacketType.AddVip);
 
         message.AddUInt32(playerId);
         message.AddString(playerName);

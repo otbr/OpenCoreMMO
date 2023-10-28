@@ -22,7 +22,7 @@ public class PlayerOutFitWindowPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.OutfitWindow);
+        message.AddByte((byte)STCPacketType.OutfitWindow);
         message.AddUInt16(player.Outfit.LookType);
 
         if (player.Outfit.LookType != 0)

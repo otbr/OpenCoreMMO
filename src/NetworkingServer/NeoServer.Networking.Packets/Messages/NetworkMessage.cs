@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Buffers;
 using System.Text;
-using NeoServer.Game.Common.Contracts.Items;
 using NeoServer.Game.Common.Location.Structs;
 using NeoServer.Server.Common.Contracts.Network;
 using NeoServer.Server.Security;
@@ -48,19 +47,6 @@ public class NetworkMessage : ReadOnlyNetworkMessage, INetworkMessage
     {
         AddUInt16((ushort)value.Length);
         WriteBytes(Encoding.Latin1.GetBytes(value));
-    }
-
-    /// <summary>
-    ///     Inserts item object into the buffer.
-    /// </summary>
-    /// <param name="item"></param>
-    public void AddItem(IItem item)
-    {
-        if (item == null)
-            //todo log
-            return;
-
-        AddBytes(item.GetRaw().ToArray());
     }
 
     /// <summary>

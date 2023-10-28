@@ -14,7 +14,7 @@ public class CreatureLightPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CreatureLight);
+        message.AddByte((byte)STCPacketType.CreatureLight);
 
         message.AddUInt32(player.CreatureId);
         message.AddByte(player.LightBrightness); // light level

@@ -17,7 +17,7 @@ public class MagicEffectPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.MagicEffect);
+        message.AddByte((byte)STCPacketType.MagicEffect);
         message.AddLocation(location);
         message.AddByte((byte)effect);
     }

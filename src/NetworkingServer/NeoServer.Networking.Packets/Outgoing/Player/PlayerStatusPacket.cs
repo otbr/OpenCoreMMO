@@ -16,7 +16,7 @@ public class PlayerStatusPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.PlayerStatus);
+        message.AddByte((byte)STCPacketType.PlayerStatus);
         message.AddUInt16((ushort)Math.Min(ushort.MaxValue, player.HealthPoints));
         message.AddUInt16((ushort)Math.Min(ushort.MaxValue, player.MaxHealthPoints));
         message.AddUInt32((uint)player.CarryStrength * 100);

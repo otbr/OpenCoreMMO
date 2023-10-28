@@ -13,7 +13,7 @@ public class ConditionIconPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.PlayerConditions);
+        message.AddByte((byte)STCPacketType.PlayerConditions);
         message.AddUInt16(icons);
     }
 }

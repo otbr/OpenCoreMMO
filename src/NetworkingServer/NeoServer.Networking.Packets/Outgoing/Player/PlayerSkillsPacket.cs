@@ -15,7 +15,7 @@ public class PlayerSkillsPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.PlayerSkills);
+        message.AddByte((byte)STCPacketType.PlayerSkills);
         message.AddByte((byte)player.GetSkillLevel(SkillType.Fist));
         message.AddByte(player.GetSkillPercent(SkillType.Fist));
 

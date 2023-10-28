@@ -23,34 +23,34 @@ public class PlayerMoveHandler : PacketHandler
             _game.Dispatcher.AddEvent(new Event(() => player.WalkTo(direction)));
     }
 
-    private Direction ParseMovementPacket(GameIncomingPacketType walkPacket)
+    private Direction ParseMovementPacket(CTSPacketType walkPacket)
     {
         var direction = Direction.North;
 
         switch (walkPacket)
         {
-            case GameIncomingPacketType.WalkEast:
+            case CTSPacketType.WalkEast:
                 direction = Direction.East;
                 break;
-            case GameIncomingPacketType.WalkNorth:
+            case CTSPacketType.WalkNorth:
                 direction = Direction.North;
                 break;
-            case GameIncomingPacketType.WalkSouth:
+            case CTSPacketType.WalkSouth:
                 direction = Direction.South;
                 break;
-            case GameIncomingPacketType.WalkWest:
+            case CTSPacketType.WalkWest:
                 direction = Direction.West;
                 break;
-            case GameIncomingPacketType.WalkNorteast:
+            case CTSPacketType.WalkNorteast:
                 direction = Direction.NorthEast;
                 break;
-            case GameIncomingPacketType.WalkNorthwest:
+            case CTSPacketType.WalkNorthwest:
                 direction = Direction.NorthWest;
                 break;
-            case GameIncomingPacketType.WalkSoutheast:
+            case CTSPacketType.WalkSoutheast:
                 direction = Direction.SouthEast;
                 break;
-            case GameIncomingPacketType.WalkSouthwest:
+            case CTSPacketType.WalkSouthwest:
                 direction = Direction.SouthWest;
                 break;
         }

@@ -17,7 +17,7 @@ public class SelfAppearPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.SelfAppear);
+        message.AddByte((byte)STCPacketType.SelfAppear);
 
         message.AddUInt32(player.CreatureId);
         message.AddUInt16(GraphicsSpeed);

@@ -14,7 +14,7 @@ public class PlayerModesPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.PlayerModes);
+        message.AddByte((byte)STCPacketType.PlayerModes);
         message.AddByte((byte)player.FightMode);
         message.AddByte((byte)player.ChaseMode);
         message.AddByte(player.SecureMode);

@@ -13,7 +13,7 @@ public class PlayerCloseChannelPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.CloseChannel);
+        message.AddByte((byte)STCPacketType.CloseChannel);
         message.AddUInt16(channelId);
     }
 }

@@ -6,6 +6,6 @@ public class PingPacket : OutgoingPacket
 {
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.Ping);
+        message.AddByte((byte)STCPacketType.Ping);
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using NeoServer.Game.Common.Contracts.Creatures;
 
 namespace NeoServer.Server.Common.Contracts.Network;
 
@@ -27,6 +26,6 @@ public interface IConnection
     void SendFirstConnection();
     void SetXtea(uint[] xtea);
     void SetAsAuthenticated();
-    void SetConnectionOwner(IPlayer player);
+    void SetConnectionOwner(uint creatureId);
     void Send();
 }

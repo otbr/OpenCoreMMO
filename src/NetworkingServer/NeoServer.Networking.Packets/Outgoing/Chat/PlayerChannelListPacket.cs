@@ -14,7 +14,7 @@ public class PlayerChannelListPacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.ChannelList);
+        message.AddByte((byte)STCPacketType.ChannelList);
 
         message.AddByte((byte)chatChannels.Length);
 

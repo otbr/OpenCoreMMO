@@ -137,7 +137,7 @@ public class GameCreatureManager : IGameCreatureManager
         var playerIsLogged = _creatureInstances.TryGetPlayer(player.Id, out var playerLogged);
         player = playerLogged ?? player;
 
-        connection.SetConnectionOwner(player);
+        connection.SetConnectionOwner(player.CreatureId);
 
         _playersConnection.AddOrUpdate(player.CreatureId, connection, (_, _) => connection);
 

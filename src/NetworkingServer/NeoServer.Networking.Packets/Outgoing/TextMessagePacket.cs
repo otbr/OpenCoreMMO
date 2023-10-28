@@ -15,7 +15,7 @@ public class TextMessagePacket : OutgoingPacket
 
     public override void WriteToMessage(INetworkMessage message)
     {
-        message.AddByte((byte)GameOutgoingPacketType.TextMessage);
+        message.AddByte((byte)STCPacketType.TextMessage);
         message.AddByte((byte)type);
         message.AddString(text);
     }

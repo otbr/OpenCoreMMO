@@ -30,7 +30,7 @@ public interface IReadOnlyNetworkMessage
     /// <summary>
     ///     Gets the type of incoming packet.
     /// </summary>
-    GameIncomingPacketType IncomingPacket { get; }
+    CTSPacketType IncomingPacket { get; }
 
     /// <summary>
     ///     Reads a 16-bit unsigned integer from the message.
@@ -80,7 +80,7 @@ public interface IReadOnlyNetworkMessage
     /// </summary>
     /// <param name="isAuthenticated">True if the connection is authenticated, otherwise false.</param>
     /// <returns>The type of incoming packet.</returns>
-    GameIncomingPacketType GetIncomingPacketType(bool isAuthenticated);
+    CTSPacketType GetIncomingPacketType(bool isAuthenticated);
 
     /// <summary>
     ///     Resizes the message to a specified length.

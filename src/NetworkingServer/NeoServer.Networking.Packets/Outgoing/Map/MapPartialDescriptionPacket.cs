@@ -38,17 +38,17 @@ public class MapPartialDescriptionPacket : OutgoingPacket
         switch (directionTo)
         {
             case Direction.East:
-                message.AddByte((byte)GameOutgoingPacketType.MapSliceEast);
+                message.AddByte((byte)STCPacketType.MapSliceEast);
                 break;
 
             case Direction.West:
-                message.AddByte((byte)GameOutgoingPacketType.MapSliceWest);
+                message.AddByte((byte)STCPacketType.MapSliceWest);
                 break;
             case Direction.North:
-                message.AddByte((byte)GameOutgoingPacketType.MapSliceNorth);
+                message.AddByte((byte)STCPacketType.MapSliceNorth);
                 break;
             case Direction.South:
-                message.AddByte((byte)GameOutgoingPacketType.MapSliceSouth);
+                message.AddByte((byte)STCPacketType.MapSliceSouth);
                 break;
             case Direction.NorthEast:
                 WriteDirectionMapSlice(message, Direction.North);
