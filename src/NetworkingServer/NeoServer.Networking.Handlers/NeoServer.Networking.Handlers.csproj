@@ -18,6 +18,7 @@
         <ProjectReference Include="..\..\ApplicationServer\NeoServer.Server.Contracts\NeoServer.Server.Common.csproj" />
         <ProjectReference Include="..\..\ApplicationServer\NeoServer.Server\NeoServer.Server.csproj" />
         <ProjectReference Include="..\..\ApplicationServer\NeoServer.Server.Commands\NeoServer.Server.Commands.csproj" />
+        <ProjectReference Include="..\NeoServer.Networking\NeoServer.Networking.csproj" />
     </ItemGroup>
 
 </Project>
