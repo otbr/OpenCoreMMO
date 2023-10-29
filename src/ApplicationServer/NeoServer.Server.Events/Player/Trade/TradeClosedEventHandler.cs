@@ -1,7 +1,7 @@
 ﻿using NeoServer.Game.Systems.SafeTrade.Request;
 using NeoServer.Networking.Packets.Outgoing.Trade;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Server.Events.Player.Trade;
 

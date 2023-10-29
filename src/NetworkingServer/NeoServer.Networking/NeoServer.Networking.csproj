@@ -4,14 +4,11 @@
         <TargetFramework>net7.0</TargetFramework>
         <Platforms>AnyCPU;x64</Platforms>
         <IsPublishable>false</IsPublishable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Serilog" Version="3.0.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\NeoServer.Networking.Shared\NeoServer.Networking.Shared.csproj" />
     </ItemGroup>
 
 </Project>

@@ -24,8 +24,7 @@ public class PlayerJoinedChannelEventHandler
         connection.OutgoingPackets.Enqueue(new PlayerOpenChannelPacket(channel.Id, channel.Name));
 
         if (!string.IsNullOrWhiteSpace(channel.Description))
-            connection.OutgoingPackets.Enqueue(new MessageToChannelPacket(null, SpeechType.ChannelWhiteText,
-                channel.Description, channel.Id));
+            connection.OutgoingPackets.Enqueue(new MessageToChannelSTCPacket(string.Empty, 0, SpeechType.ChannelWhiteText, channel.Description, channel.Id));
 
         connection.Send();
     }

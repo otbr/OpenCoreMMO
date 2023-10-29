@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 
 namespace NeoServer.Benchmarks.Networking;
 

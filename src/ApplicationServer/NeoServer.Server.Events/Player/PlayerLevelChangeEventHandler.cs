@@ -3,7 +3,7 @@ using NeoServer.Game.Common.Creatures;
 using NeoServer.Game.Common.Helpers;
 using NeoServer.Networking.Packets.Outgoing.Player;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Server.Events.Player;
 

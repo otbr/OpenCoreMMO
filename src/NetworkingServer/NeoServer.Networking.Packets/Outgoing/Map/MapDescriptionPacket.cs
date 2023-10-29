@@ -2,8 +2,8 @@
 using NeoServer.Game.Common.Contracts.Creatures;
 using NeoServer.Game.Common.Contracts.World;
 using NeoServer.Game.Common.Location;
-using NeoServer.Networking.Shared.Enums;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Enums;
+using NeoServer.Networking.Messages;
 
 namespace NeoServer.Networking.Packets.Outgoing.Map;
 

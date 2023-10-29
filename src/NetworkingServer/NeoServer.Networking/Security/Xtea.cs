@@ -1,7 +1,7 @@
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 using System;
 
-namespace NeoServer.Networking.Shared.Security;
+namespace NeoServer.Networking.Security;
 
 public static class Xtea
 {
@@ -28,11 +28,11 @@ public static class Xtea
 
                 while (xCount-- > 0)
                 {
-                    words[pos] += (((words[pos + 1] << 4) ^ (words[pos + 1] >> 5)) + words[pos + 1]) ^ (xSum
-                        + key[xSum & 3]);
+                    words[pos] += (words[pos + 1] << 4 ^ words[pos + 1] >> 5) + words[pos + 1] ^ xSum
+                        + key[xSum & 3];
                     xSum += xDelta;
-                    words[pos + 1] += (((words[pos] << 4) ^ (words[pos] >> 5)) + words[pos]) ^ (xSum
-                        + key[(xSum >> 11) & 3]);
+                    words[pos + 1] += (words[pos] << 4 ^ words[pos] >> 5) + words[pos] ^ xSum
+                        + key[xSum >> 11 & 3];
                 }
             }
         }
@@ -58,11 +58,11 @@ public static class Xtea
 
                 while (xCount-- > 0)
                 {
-                    words[pos + 1] -= (((words[pos] << 4) ^ (words[pos] >> 5)) + words[pos]) ^ (xSum
-                        + key[(xSum >> 11) & 3]);
+                    words[pos + 1] -= (words[pos] << 4 ^ words[pos] >> 5) + words[pos] ^ xSum
+                        + key[xSum >> 11 & 3];
                     xSum -= xDelta;
-                    words[pos] -= (((words[pos + 1] << 4) ^ (words[pos + 1] >> 5)) + words[pos + 1]) ^ (xSum
-                        + key[xSum & 3]);
+                    words[pos] -= (words[pos + 1] << 4 ^ words[pos + 1] >> 5) + words[pos + 1] ^ xSum
+                        + key[xSum & 3];
                 }
             }
         }

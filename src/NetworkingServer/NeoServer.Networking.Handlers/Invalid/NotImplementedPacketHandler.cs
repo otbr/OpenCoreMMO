@@ -1,10 +1,10 @@
 ﻿using System;
 using Serilog;
-using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Messages;
-using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Enums;
+using NeoServer.Networking.Messages;
+using NeoServer.Networking.Connection;
 
-namespace NeoServer.Networking.Handlers;
+namespace NeoServer.Networking.Handlers.Invalid;
 
 public class NotImplementedPacketHandler : PacketHandler
 {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NeoServer.Networking.Enums;
 using NeoServer.Networking.Handlers.Chat;
 using NeoServer.Networking.Handlers.LogIn;
 using NeoServer.Networking.Handlers.Player;
@@ -7,7 +8,6 @@ using NeoServer.Networking.Handlers.Player.Movement;
 using NeoServer.Networking.Handlers.Player.Party;
 using NeoServer.Networking.Handlers.Shop;
 using NeoServer.Networking.Handlers.Trade;
-using NeoServer.Networking.Shared.Enums;
 
 namespace NeoServer.Networking.Handlers;
 

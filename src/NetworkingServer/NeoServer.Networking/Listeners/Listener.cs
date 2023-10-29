@@ -3,8 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using NeoServer.Networking.Connection;
 using NeoServer.Networking.Protocols;
-using NeoServer.Networking.Shared.Connection;
 using Serilog;
 
 namespace NeoServer.Networking.Listeners;
@@ -54,7 +54,7 @@ public abstract class Listener : TcpListener, IListener
     {
         var socket = await AcceptSocketAsync(cancellationToken).ConfigureAwait(false);
 
-        var connection = new Connection(socket, _logger);
+        var connection = new Connection.Connection(socket, _logger);
 
         connection.OnCloseEvent += OnConnectionClose;
         connection.OnProcessEvent += _protocol.ProcessMessage;

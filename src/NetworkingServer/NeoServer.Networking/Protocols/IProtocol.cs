@@ -1,4 +1,4 @@
-﻿using NeoServer.Networking.Shared.Connection;
+﻿using NeoServer.Networking.Connection;
 
 namespace NeoServer.Networking.Protocols;
 

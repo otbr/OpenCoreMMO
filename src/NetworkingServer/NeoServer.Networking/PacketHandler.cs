@@ -1,7 +1,7 @@
-﻿using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Messages;
+﻿using NeoServer.Networking.Connection;
+using NeoServer.Networking.Messages;
 
-namespace NeoServer.Networking.Handlers;
+namespace NeoServer.Networking;
 
 public abstract class PacketHandler : IPacketHandler
 {

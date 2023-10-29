@@ -1,7 +1,6 @@
 ﻿using System;
-using NeoServer.Networking.Handlers;
-using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Security;
+using NeoServer.Networking.Connection;
+using NeoServer.Networking.Security;
 
 namespace NeoServer.Networking.Protocols;
 

@@ -1,6 +1,6 @@
 ﻿using NeoServer.Game.Common.Contracts.Creatures;
 using NeoServer.Game.Creatures.Player;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 
 namespace NeoServer.Networking.Packets.Incoming.Player;
 

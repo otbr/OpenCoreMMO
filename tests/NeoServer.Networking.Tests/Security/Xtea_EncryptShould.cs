@@ -1,6 +1,5 @@
 using System.Linq;
-using NeoServer.Networking.Packets.Security;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 using Xunit;
 
 namespace NeoServer.Networking.Tests.Security;

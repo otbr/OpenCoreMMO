@@ -6,7 +6,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Database\NeoServer.Data\NeoServer.Data.csproj" />
-        <ProjectReference Include="..\..\NetworkingServer\NeoServer.Networking.Shared\NeoServer.Networking.Shared.csproj" />
+        <ProjectReference Include="..\..\NetworkingServer\NeoServer.Networking\NeoServer.Networking.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

@@ -8,7 +8,7 @@ using NeoServer.Game.Common.Contracts.World;
 using NeoServer.Game.Creatures;
 using NeoServer.Game.World;
 using NeoServer.Game.World.Map;
-using NeoServer.Networking.Handlers;
+using NeoServer.Networking;
 using NeoServer.Server.Commands.Movements;
 using NeoServer.Server.Commands.Player;
 using NeoServer.Server.Common.Contracts.Tasks;

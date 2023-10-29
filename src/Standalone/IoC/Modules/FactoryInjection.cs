@@ -11,10 +11,11 @@ using NeoServer.Game.Creatures.Player;
 using NeoServer.Game.Items.Factories;
 using NeoServer.Game.Items.Factories.AttributeFactory;
 using NeoServer.Game.World.Factories;
+using NeoServer.Networking;
+using NeoServer.Networking.Connection;
+using NeoServer.Networking.Enums;
 using NeoServer.Networking.Handlers;
 using NeoServer.Networking.Handlers.Invalid;
-using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Enums;
 using Serilog;
 
 namespace NeoServer.Server.Standalone.IoC.Modules;

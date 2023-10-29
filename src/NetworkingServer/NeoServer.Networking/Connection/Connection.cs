@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
-using NeoServer.Networking.Shared.Messages;
-using NeoServer.Networking.Shared.Security;
+using NeoServer.Networking.Messages;
+using NeoServer.Networking.Security;
 using Serilog;
 
-namespace NeoServer.Networking.Shared.Connection;
+namespace NeoServer.Networking.Connection;
 
 public class Connection : IConnection
 {
@@ -119,6 +119,14 @@ public class Connection : IConnection
         //TODO: MUNIZ
         //new FirstConnectionPacket().WriteToMessage(message);
 
+        message.AddUInt16(0x0006);
+        message.AddByte(0x1F);
+        message.AddUInt32((uint)DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+
+        var rnd = new Random();
+        var randomByte = (byte)rnd.Next(byte.MinValue, byte.MaxValue);
+        message.AddByte(randomByte);
+
         SendMessage(message);
     }
 
@@ -164,6 +172,10 @@ public class Connection : IConnection
         {
             //TODO: MUNIZ
             //new LoginFailurePacket(text).WriteToMessage(message);
+
+            message.AddByte(0x0A);
+            message.AddString(text);
+
             message.AddLength();
             var encryptedMessage = Xtea.Encrypt(message, XteaKey);
 
@@ -241,14 +253,14 @@ public class Connection : IConnection
                 }
 
                 if (size > BUFFER_SIZE) size = BUFFER_SIZE;
-                
+
                 while (totalBytesRead < size)
                 {
                     if (!_stream.CanRead || !_stream.DataAvailable)
                     {
                         return false;
                     }
-                    
+
                     var bytesRead = _stream.Read(InMessage.Buffer, totalBytesRead, size - totalBytesRead);
                     if (bytesRead == 0) break;
 

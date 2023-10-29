@@ -1,6 +1,6 @@
-﻿using System; 
+﻿using System;
 
-namespace NeoServer.Networking.Shared.Messages;
+namespace NeoServer.Networking.Messages;
 
 public interface INetworkMessage : IReadOnlyNetworkMessage
 {

@@ -3,8 +3,8 @@ using NeoServer.Networking.Handlers.ClientVersion;
 using NeoServer.Networking.Packets.Incoming;
 using NeoServer.Networking.Packets.Outgoing.Login;
 using NeoServer.Server.Configurations;
-using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Networking.Handlers.LogIn;
 

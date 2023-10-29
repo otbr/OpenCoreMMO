@@ -1,6 +1,6 @@
-﻿using NeoServer.Networking.Shared.Messages;
+﻿using NeoServer.Networking.Messages;
 
-namespace NeoServer.Networking.Shared;
+namespace NeoServer.Networking;
 
 public interface IOutgoingPacket
 {

@@ -1,4 +1,4 @@
-﻿using NeoServer.Networking.Shared.Messages;
+﻿using NeoServer.Networking.Messages;
 using NeoServer.Server.Security;
 
 namespace NeoServer.Networking.Packets.Incoming;

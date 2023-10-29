@@ -1,9 +1,9 @@
-﻿using NeoServer.Networking.Shared.Security;
+﻿using NeoServer.Networking.Security;
 using System;
 using System.Buffers;
 using System.Text;
 
-namespace NeoServer.Networking.Shared.Messages;
+namespace NeoServer.Networking.Messages;
 
 /// <summary>
 ///     Contains all the methods to handle incoming and outgoing message from/to client

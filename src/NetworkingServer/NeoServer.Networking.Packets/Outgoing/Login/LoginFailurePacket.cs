@@ -1,6 +1,6 @@
 ﻿namespace NeoServer.Networking.Packets.Outgoing.Login;
-using NeoServer.Networking.Shared.Enums;
-using NeoServer.Networking.Shared.Messages;
+
+using NeoServer.Networking.Messages;
 
 public class LoginFailurePacket : OutgoingPacket
 {

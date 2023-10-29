@@ -1,4 +1,4 @@
-namespace NeoServer.Networking.Shared.Security;
+namespace NeoServer.Networking.Security;
 
 public class AdlerChecksum
 {
@@ -23,6 +23,6 @@ public class AdlerChecksum
             b %= adler;
         }
 
-        return (b << 16) | a;
+        return b << 16 | a;
     }
 }

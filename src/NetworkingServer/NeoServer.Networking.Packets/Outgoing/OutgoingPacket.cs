@@ -1,5 +1,4 @@
-﻿using NeoServer.Networking.Shared;
-using NeoServer.Networking.Shared.Messages;
+﻿using NeoServer.Networking.Messages;
 
 namespace NeoServer.Networking.Packets.Outgoing;
 

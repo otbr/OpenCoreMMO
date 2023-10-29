@@ -2,7 +2,7 @@
 using NeoServer.Game.Items;
 using NeoServer.Game.Items.Bases;
 using NeoServer.Networking.Packets.Outgoing.Item;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 using Xunit;
 
 namespace NeoServer.Networking.Tests.Packets.Outgoing;

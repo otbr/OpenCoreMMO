@@ -1,4 +1,5 @@
-﻿using NeoServer.Networking.Shared.Messages;
+﻿using NeoServer.Networking.Messages;
+
 namespace NeoServer.Networking.Packets.Incoming.Shop;
 
 public class PlayerSalePacket : IncomingPacket

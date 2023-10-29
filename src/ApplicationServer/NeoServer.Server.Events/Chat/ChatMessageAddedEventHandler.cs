@@ -23,9 +23,30 @@ public class ChatMessageAddedEventHandler
         foreach (var user in chatChannel.Users)
         {
             if (!game.CreatureManager.GetPlayerConnection(user.Player.CreatureId, out var connection)) continue;
-            connection.OutgoingPackets.Enqueue(new MessageToChannelPacket(player, speechType, message,
-                chatChannel.Id));
+
+            //Actual
+            //var oldPacket = new MessageToChannelPacket(player, speechType, message, chatChannel.Id);
+            //connection.OutgoingPackets.Enqueue(oldPacket);
+
+            //New
+            if (speechType == SpeechType.None) return;
+            if (string.IsNullOrWhiteSpace(message)) return;
+            if (chatChannel.Id == default) return;
+
+            var newPacket = new MessageToChannelSTCPacket(player.GetPlayerName(), player.GetPlayerLevel(), speechType, message, chatChannel.Id);
+
+            connection.OutgoingPackets.Enqueue(newPacket);
+
             connection.Send();
         }
     }
+}
+
+public static class CreatureExtensions
+{
+    public static string GetPlayerName(this ICreature creature)
+        => creature != null ? creature.Name : string.Empty;
+
+    public static ushort GetPlayerLevel(this ICreature creature)
+        => creature != null && creature is IPlayer ? ((IPlayer)creature).Level : (ushort)0;
 }

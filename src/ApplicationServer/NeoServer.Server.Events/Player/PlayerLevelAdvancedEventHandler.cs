@@ -2,7 +2,7 @@
 using NeoServer.Game.Common.Parsers;
 using NeoServer.Networking.Packets.Outgoing;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Server.Events.Player;
 

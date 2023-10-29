@@ -1,9 +1,9 @@
-using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Enums;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace NeoServer.Networking.Shared.Messages;
+namespace NeoServer.Networking.Messages;
 
 public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
 {
@@ -47,7 +47,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
                 return packetType;
 
             case false:
-                if (Buffer.Length <6) return CTSPacketType.None;
+                if (Buffer.Length < 6) return CTSPacketType.None;
                 IncomingPacket = (CTSPacketType)Buffer[6];
                 return IncomingPacket;
 
@@ -81,7 +81,7 @@ public class ReadOnlyNetworkMessage : IReadOnlyNetworkMessage
     public ReadOnlySpan<byte> GetBytes(int length)
     {
         var to = BytesRead + length;
-        
+
         if (to > Buffer.Length)
         {
             length = Buffer.Length - BytesRead;

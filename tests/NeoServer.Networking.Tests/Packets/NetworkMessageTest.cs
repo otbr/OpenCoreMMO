@@ -1,5 +1,5 @@
 ﻿using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
 using Xunit;
 
 namespace NeoServer.Networking.Tests.Packets;

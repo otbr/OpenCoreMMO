@@ -1,4 +1,4 @@
-﻿namespace NeoServer.Networking.Shared.Enums;
+﻿namespace NeoServer.Networking.Enums;
 
 public enum STCPacketType : byte
 {

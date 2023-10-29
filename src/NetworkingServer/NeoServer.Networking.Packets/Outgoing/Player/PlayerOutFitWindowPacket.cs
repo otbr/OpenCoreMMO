@@ -2,8 +2,8 @@
 using System.Linq;
 using NeoServer.Data.Entities;
 using NeoServer.Game.Common.Contracts.Creatures;
-using NeoServer.Networking.Shared.Enums;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Enums;
+using NeoServer.Networking.Messages;
 
 namespace NeoServer.Networking.Packets.Outgoing.Player;
 

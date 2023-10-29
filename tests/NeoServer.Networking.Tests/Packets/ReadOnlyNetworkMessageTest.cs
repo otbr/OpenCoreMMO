@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NeoServer.Game.Common.Location.Structs;
-using NeoServer.Networking.Shared.Enums;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Enums;
+using NeoServer.Networking.Messages;
 using Xunit;
 
 namespace NeoServer.Networking.Tests.Packets;

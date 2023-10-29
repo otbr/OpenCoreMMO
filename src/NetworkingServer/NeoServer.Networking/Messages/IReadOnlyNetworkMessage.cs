@@ -1,7 +1,7 @@
-using NeoServer.Networking.Shared.Enums;
+using NeoServer.Networking.Enums;
 using System;
 
-namespace NeoServer.Networking.Shared.Messages;
+namespace NeoServer.Networking.Messages;
 
 // <summary>
 /// Interface for read-only network messages.

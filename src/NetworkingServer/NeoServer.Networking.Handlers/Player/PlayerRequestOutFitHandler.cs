@@ -3,8 +3,8 @@ using NeoServer.Game.Common.Contracts.DataStores;
 using NeoServer.Game.Common.Helpers;
 using NeoServer.Networking.Packets.Outgoing.Player;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Networking.Shared.Connection;
-using NeoServer.Networking.Shared.Messages;
+using NeoServer.Networking.Messages;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Networking.Handlers.Player;
 

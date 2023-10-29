@@ -8,7 +8,7 @@ using NeoServer.Networking.Packets.Outgoing.Effect;
 using NeoServer.Networking.Packets.Outgoing.Map;
 using NeoServer.Networking.Packets.Outgoing.Player;
 using NeoServer.Server.Common.Contracts;
-using NeoServer.Networking.Shared.Connection;
+using NeoServer.Networking.Connection;
 
 namespace NeoServer.Server.Events.Player;
 

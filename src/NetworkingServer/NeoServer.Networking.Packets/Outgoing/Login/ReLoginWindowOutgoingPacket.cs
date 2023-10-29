@@ -1,6 +1,7 @@
 ﻿namespace NeoServer.Networking.Packets.Outgoing.Login;
-using NeoServer.Networking.Shared.Enums;
-using NeoServer.Networking.Shared.Messages;
+
+using NeoServer.Networking.Enums;
+using NeoServer.Networking.Messages;
 
 public class ReLoginWindowOutgoingPacket : OutgoingPacket
 {
